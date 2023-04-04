@@ -1,5 +1,6 @@
 package str_index;
 
+import java.awt.print.Printable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -55,16 +56,39 @@ public class StringArray {
 		ArrayList<String> temparr = new ArrayList<>(Arrays.asList(answer.split("")));
 		String sortAnswer="";
 		String temp = "";
+		System.out.println(answer+temparr);
 		int index = 0;
+		int temidx = 0;
 //		String[] answerArr = answer.split("");
+		//str = 내가 입력한 값
+		//answer = 입력한 값 중 반복이 가장 적은 알파벳 문자열
+		//temparr = answer을 한글자씩 split한 배열
 		for(String a : temparr) {
 			index = str.indexOf(a);
-			if(str.length()>index) {
-				sortAnswer += a;
+			if(sortAnswer.equals(""))
+			{
+				if(str.length()>index) {
+					sortAnswer = a;
+					temp = sortAnswer;
+					System.out.println(a);
+				}
 			}
-			else if()//하다 맘
+			else {
+				temidx = str.indexOf(temp);
+				if(index>temidx) {
+					sortAnswer += a;
+					temp = a;
+					System.out.println(a);
+				}
+				else if(index<temidx) {
+					sortAnswer = sortAnswer+a;
+					temp = a;
+					System.out.println(a+a);
+				}
+			}
+//			else if(str.leng())//하다 맘
 		}
-		
+
 		return sortAnswer;
 		
 	}
