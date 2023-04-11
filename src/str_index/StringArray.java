@@ -40,15 +40,18 @@ public class StringArray {
 		while(alpa.hasNext()) {
 			String alpabet = alpa.next();
 			value = strmap.get(alpabet);
+			//temp 1번 알파벳의 반복된 횟수(3)
+			// value Map 키값으로 받아온 벨류값(반복된 횟수)
+			// 반복된 횟수가 가장 적은 알파벳
 			if(temp>value) {
 				answer = alpabet; 
 				temp=value;
 			}
+			//반복 횟수가 같으면 a=2 b=2
 			else if(temp==value) {
 				answer +=alpabet;
 			}
 		}
-		
 		return sortStr(str,answer);
 	}
 	private String sortStr(String str, String answer) {
@@ -62,7 +65,7 @@ public class StringArray {
 			if(str.length()>index) {
 				sortAnswer += a;
 			}
-			else if()//하다 맘
+//			else if()//하다 맘
 		}
 		
 		return sortAnswer;
